@@ -15,7 +15,7 @@ A project is built to create a schedule server - which provides you a easy way t
 `Code` by hands
 
 ## Installation
-Install gRPC binary
+Install protoc generator plugins
 ```bash
 go get github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway
 go get google.golang.org/protobuf/cmd/protoc-gen-go

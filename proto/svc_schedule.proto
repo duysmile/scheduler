@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package scheduler;
+
+import "protoc-gen-openapiv2/options/annotations.proto";
+import "google/api/annotations.proto";
+
+import "schedule.proto";
+
+option go_package = "github.com/duysmile/scheduler";
+
+option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
+  info: {
+    title: "Scheduler";
+    version: "1.0";
+    contact: {
+      name: "duysmile";
+      url: "https://github.com/duysmile/scheduler";
+    };
+  };
+};
+
+service SchedulerService {
+  rpc CreateScheduler (CreateSchedulerRequest) returns (CreateSchedulerResponse) {
+    option(google.api.http) = {
+      post: "/schedulers",
+      body: "*"
+    };
+  }
+}
